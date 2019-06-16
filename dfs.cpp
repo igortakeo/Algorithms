@@ -1,4 +1,6 @@
-
+#include <bits/stdc++.h>
+#define N 100100
+using namespace std;
 vector<int>vertices[N]; //lista de adjacências.
 int vis[N] = {0}; //0 para não visitado e 1 para visitado.
 
@@ -10,6 +12,4 @@ void DFS(int x){ //x -> vértice inicial.
 	}
 }
 
-
-vector<int>edges[N]; 
 

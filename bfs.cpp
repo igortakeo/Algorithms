@@ -1,8 +1,11 @@
+#include <bits/stdc++.h>
+#define N 100100
+using namespace std;
 
 vector<int>vertices[N]; //lista de adjacências.
 int vis[N] = {0}; //0 para não visitado e 1 para visitado.
 
-void BFS(int x){
+void bfs(int x){
 	
 	queue<int>fila;
 	fila.push(x); //adiciona o primeiro vértice na fila.
