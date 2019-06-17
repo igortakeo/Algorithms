@@ -4,11 +4,11 @@ using namespace std;
 
 vecto<int>edges[MAX];
 stack<int>st;
-int number_vertex, time=1, time_discovery[MAX], low[MAX];
+int number_vertex, tarjan_time=0, time_discovery[MAX], low[MAX];
 bool vis[MAX]; 
 
 void dfs(int u){
-	time_discovery[u] = low[u] = time++; //tempo de descoberta e low recebem o mesmo valor
+	time_discovery[u] = low[u] = ++tarjan_time; //tempo de descoberta e low recebem o mesmo valor
 	st.push(u); //coloca 'u' na pilha
 	vis[u] = true; //marca como visitado
 	for(auto v : edges[u]){ //vejo todos os adjacentes de 'u'  no grafo
