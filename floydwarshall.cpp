@@ -12,7 +12,7 @@ vector<int>edges[MAX]; //grafo
 void floydWarshall(){//execucao do floyd warshall
 	for(int k=1; k <= number_vertex; k++){//Testando todos os caminhos entre os vertices (v,w) e pegando o de menor peso 
 		for(int v=1; v<= number_vertex; v++){
-			for(int w=1; x <= number_vertex; w++) dp[v][w] = min(dp[v][k]+dp[k][w], dp[v][w]);
+			for(int w=1; w <= number_vertex; w++) dp[v][w] = min(dp[v][k]+dp[k][w], dp[v][w]);
 		}
 	}
 }
