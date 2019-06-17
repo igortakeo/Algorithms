@@ -21,7 +21,7 @@ void dfs_t(int u){//dfs no grafo transposto
 void kosaraju(){ //execucao do kosaraju
 	for(int i=1; i<= number_vertex; i++) if(!vis[i]) dfs(i); //construo a pilha
 	memset(vis, false, number_vertex+1); //seto o vetor de visitados como "false"	
-	while(!st.empty()){ //enquanto a pilha nao estiver fazia o while eh executado
+	while(!st.empty()){ //enquanto a pilha nao estiver vazia o while eh executado
 		int w = st.top(); //pego o topo da pilha
 		st.pop(); //retiro da pilha
 		if(!vis[w]){dfs_t(w); cout << endl;} //se o vertice nao foi visitado executo a dfs no grafo transposto
