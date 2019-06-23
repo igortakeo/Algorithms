@@ -2,7 +2,7 @@
 #define MAX 100100
 using namespace std;
 
-vecto<int>edges[MAX];
+vector<int>edges[MAX];
 stack<int>st;
 int number_vertex, tarjan_time=0, time_discovery[MAX], low[MAX];
 bool vis[MAX]; 
