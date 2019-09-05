@@ -8,7 +8,7 @@ using namespace std;
 //max_size = 4*N
 int tree[MAX];
 
-//Implementation of Sum Segment Tree with Lazy Propagation
+//Implementation of Sum Segment Tree 
 
 //arr[l...r]
 //cn : current node in segment tree
