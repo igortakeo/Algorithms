@@ -17,8 +17,8 @@
 
 ll FasterExponentiation(ll x, ll n){
 	if(n == 0) return 1;
-	else if(n%2 == 0) return Exponentiation(x*x, n/2); // n is even 	
-	else x* Exponentiation(x*x, (n-1)/2); //n is odd
+	else if(n%2 == 0) return FasterExponentiation(x*x, n/2); // n is even 	
+	else x* FasterExponentiation(x*x, (n-1)/2); //n is odd
 }
 
 ll ModularExponentiation(ll x, ll n, ll m){

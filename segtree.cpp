@@ -185,7 +185,7 @@ int tree[4*MAX];
 int lazy[4*MAX];
 
 int query(int l, int r, int cn, int ra, int rb){
-   	 if(lazy[cn]){ 
+   if(lazy[cn]){ 
         tree[cn] += (l-r+ 1)*lazy[cn];    			// Update it
         if(l != r){
             lazy[cn*2+1] += lazy[cn];                 // Mark child as lazy
@@ -212,7 +212,7 @@ int query(int l, int r, int cn, int ra, int rb){
  * 
  */ 
 void updateValue(int l, int r, int a, int b, int new_value, int cn){
-	 if(lazy[cn]){ 
+    if(lazy[cn]){ 
         tree[cn] += (l-r+ 1)*lazy[cn];    			// Update it
         if(l != r){
             lazy[cn*2+1] += lazy[cn];                 // Mark child as lazy
