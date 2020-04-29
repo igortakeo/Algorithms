@@ -230,8 +230,8 @@ void updateValue(int l, int r, int a, int b, int new_value, int cn){
     }
     else{
         int middle = (l+r)/2;
-        updateValueTree(l, middle, i, new_value, 2*cn+1);
-        updateValueTree(middle+1, r, i, new_value, 2*cn+2);
+        updateValue(l, middle, a, b, new_value, 2*cn+1);
+        updateValue(middle+1, r, a, b, new_value, 2*cn+2);
         tree[cn] = tree[2*cn+1] + tree[2*cn+2];
     }
 }

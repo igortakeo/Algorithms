@@ -3,7 +3,7 @@
 using namespace std;
 
 vector<int>vertices[N]; //lista de adjacências.
-int vis[N] = {0}; //0 para não visitado e 1 para visitado.
+int vis[N]; //0 para não visitado e 1 para visitado.
 
 void bfs(int x){
 	
