@@ -194,7 +194,7 @@ int query(int l, int r, int cn, int ra, int rb){
         lazy[cn] = 0;                                  // Reset it
     }
     if(l >= ra and r <= rb) return tree[cn];
-    else if(r < ra or l > rb) return 0;
+    else if(r < ra or l > rb) return 0; //if is seg min change 0 to MAX
     int middle = (l+r)/2;
     return query(l, middle, cn*2+1, ra, rb) + query(middle+1, r, cn*2+2, ra, rb);
 }
