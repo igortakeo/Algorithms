@@ -185,13 +185,13 @@ int tree[4*MAX];
 int lazy[4*MAX];
 
 int query(int l, int r, int cn, int ra, int rb){
-   if(lazy[cn]){ 
-        tree[cn] += (l-r+ 1)*lazy[cn];    			// Update it
+   	 if(lazy[cn]){ 
+        tree[cn] += (l-r+ 1)*lazy[cn];    			  // Update it, if seg min tree tree[cn] += lazy[cn]
         if(l != r){
             lazy[cn*2+1] += lazy[cn];                 // Mark child as lazy
-            lazy[cn*2+2] += lazy[cn];                // Mark child as lazy
+            lazy[cn*2+2] += lazy[cn];                 // Mark child as lazy
         }
-        lazy[cn] = 0;                                  // Reset it
+        lazy[cn] = 0;                                 // Reset it
     }
     if(l >= ra and r <= rb) return tree[cn];
     else if(r < ra or l > rb) return 0; //if is seg min change 0 to MAX
@@ -212,17 +212,17 @@ int query(int l, int r, int cn, int ra, int rb){
  * 
  */ 
 void updateValue(int l, int r, int a, int b, int new_value, int cn){
-    if(lazy[cn]){ 
-        tree[cn] += (l-r+ 1)*lazy[cn];    			// Update it
+	 if(lazy[cn]){ 
+        tree[cn] += (l-r+ 1)*lazy[cn];    			  	// Update it, if min seg-tree tree[cn] += lazy[cn]
         if(l != r){
-            lazy[cn*2+1] += lazy[cn];                 // Mark child as lazy
-            lazy[cn*2+2] += lazy[cn];                // Mark child as lazy
+            lazy[cn*2+1] += lazy[cn];                 	// Mark child as lazy
+            lazy[cn*2+2] += lazy[cn];                 	// Mark child as lazy
         }
-        lazy[cn] = 0;                                  // Reset it
+        lazy[cn] = 0;                                 	// Reset it
     }
     if(l > b or r < a) return;
     else if(a <= l and r <= b){
-		tree[cn] += (l-r+1)*new_value;
+		tree[cn] += (l-r+1)*new_value; 					//if min seg-tree tree[cn] = lazy[cn]
         if(l != r){
             lazy[cn*2+1] += new_value;                 // Mark child as lazy
             lazy[cn*2+2] += new_value;                // Mark child as lazy
