@@ -9,7 +9,8 @@
  * 4 - (a/b)%c = ((a%c) * ((b^-1)%c))%c 
  * 
  * Note : b^-1 is the multiplicative modulo inverse of b and c
- * 
+ *
+ * if a % m = c and b % m = c then (a-b)%m = 0
  * 
  */
  
@@ -19,7 +20,7 @@
   * lcm(P*N, P*M) = P*lcm(N,M)	
   * 
   * lcm(P, M) = P*M/gcd(P,M)
-  * Therefore gcd(P,M)*lcm(P,M) = P*M
+  * Therefore gcd(P,M)*lcm(P,M) = P*M 
   * 
   * - gcd(m*a, m*b, m*c) = m*gcd(a,b,c)
   * - gcd(a+m*b, b) = gcd(a,b)
@@ -29,7 +30,7 @@
   * gcd(a*b, m) = gcd(a,m)*gcd(b,m)	
   * lcm(a*b, m) = (lcm(a,m)*lcm(b,m))/m
   * 
-  * - lcm(a, gcd(a,b)) = a
+  * - lcm(a, gcd(a,b)) = a  
   * - gcd(a, lcm(a,b)) = a
   * - lcm(a, gcd(b,c)) = gcd(lcm(a,b),lcm(a,c))	
   * - gcd(a, lcm(b,c)) = lcm(gcd(a,b), gcd(a,c))
@@ -83,6 +84,37 @@ ll powermod(ll x, ll y, ll p) {
     return res; 
 }  
 
+/*
+  ax + by = c
+  Diofantine Equation has solution only if 
+  c%gcd(a,b)  = 0
+
+  Extended Euclidean return the solution of a*x + b*y = gcd(a,b)
+  d = gcd(a,b)
+
+  To find a*x + b*y = c
+  c = d*p
+  x_0 = x*p and y_0 = y*p
+
+  If Diofantine Euqation does have solution, then
+  all solutions are given by:
+  
+  x_n = x_0 + (b/d)*t and y_n = y_0 - (a/d)*t
+
+  x_0 : result x of extended euclidean
+  y_0 : result y of extended euclidean
+  d :  gcd(a,b)
+  t: ranges over the integers
+
+  x_n > 0 and y_n > 0
+
+  t_1 = - x_0 / (b/d)
+  t_2 =   y_0 / (a/d) 
+
+  if t_1 < t_2 : t_1 < t < t_2
+  else : t_2 < t < t_1
+*/
+
 ll d, x, y;
 
 void extendEucld(ll A, ll B){
@@ -119,7 +151,7 @@ void extendEucld(ll A, ll B){
 	 }
 	 
  }
- Time Complexity : O(M)
+ //Time Complexity : O(M)
  
  /*
   * A and M  are coprime i.e Ax + My = 1. In the extend
@@ -136,7 +168,7 @@ ll modInverse(ll A, ll M){
 	  return (x%M + M)%M; //x may be negative 
 	  
 }
-  Time Complexity : O(log(max(A, M)));
+//Time Complexity : O(log(max(A, M)));
 
 /*
 * The third approach uses Fermat's Little Theorem
@@ -148,4 +180,4 @@ ll modInverse(ll A, ll M){
 ll modInverse(ll A, ll M){
    return ModularExponentiation(A,M-2,M);
 }
-Time Complexity : O(log M);
+//Time Complexity : O(log M);
