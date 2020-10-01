@@ -3,6 +3,8 @@
 #define MAX 101
 using namespace std;
 
+//Calcular o caminho mais curto para todos os pares de vertices
+
 int dp[MAX][MAX]; //tabela de caminhos minimos
 int number_vertex; //numero de vertices
 vector<int>edges[MAX]; //grafo
