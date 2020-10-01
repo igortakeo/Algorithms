@@ -2,6 +2,9 @@
 #define MAX 100100
 using namespace std;
 
+//Encontrar componentes fortementes conexas (Para todo par de (u,v) existe um caminho de u para v e vice-versa)
+//Complexidade: O(V+E)
+
 vector<int>edges[MAX], edges_T[MAX]; //grafo e grafo transposto
 stack<int>st; //pilha
 bool vis[MAX]; //vetor de visitados 
