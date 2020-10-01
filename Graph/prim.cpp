@@ -3,6 +3,8 @@
 #define MAX 100100
 using namespace std;
 
+//Encontra a arvore geradora minima (subconjunto de arestas que contem todos os vertices e possui peso minimo)
+
 struct edges{ //struct aresta x = vertice_1, y = vertice_2 e weight = peso
 	int x, y, weight;
 };
