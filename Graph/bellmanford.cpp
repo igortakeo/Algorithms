@@ -3,6 +3,8 @@
 #define inf 0x3f3f3f3f //inf=1061109567
 using namespace std;
 
+//Caminho minimo em um grafo ponderado com peso negativo
+
 struct edges{//struct aresta
 	int x, y, weight; //x = vertice_1, y = vertice_2 e weight = peso
 }
