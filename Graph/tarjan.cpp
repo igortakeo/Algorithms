@@ -2,6 +2,8 @@
 #define MAX 100100
 using namespace std;
 
+//Encontrar componentes fortementes conexas (Para todo par de (u,v) existe um caminho de u para v e vice-versa)
+
 vector<int>edges[MAX];
 stack<int>st;
 int number_vertex, tarjan_time=0, time_discovery[MAX], low[MAX];
