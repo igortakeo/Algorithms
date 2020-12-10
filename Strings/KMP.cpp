@@ -33,7 +33,7 @@ void kmp(string t, string s) {
             j = pi[j-1]; 
         } 
         else if (i < N && s[j] != t[i]) { 
-            if (j != 0) j = s[j-1]; 
+            if (j != 0) j = pi[j-1]; 
             else i = i+1; 
         } 
     } 
