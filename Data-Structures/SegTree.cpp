@@ -105,8 +105,8 @@ void updateValue(int l, int r, int i, int new_value, int cn){
     else if(i < l || i > r) return;
     else{
         int middle = (l+r)/2;
-        updateValueTree(l, middle, i, new_value, 2*cn+1);
-        updateValueTree(middle+1, r, i, new_value, 2*cn+2);
+        updateValue(l, middle, i, new_value, 2*cn+1);
+        updateValue(middle+1, r, i, new_value, 2*cn+2);
         tree[cn] = tree[2*cn+1] + tree[2*cn+2];
     }
 }
