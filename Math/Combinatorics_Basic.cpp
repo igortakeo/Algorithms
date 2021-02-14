@@ -10,8 +10,47 @@ Combination: n!/(p!*(n-p)!)
 Combination with Repetition: (n+p-1)!/(n-1)!*p!
 */
 
+
+ll d_ex, x_ex, y_ex;
+ 
+void extendEucld(ll A, ll B){
+	if(B == 0){
+		d_ex = A;
+		x_ex = 1;
+		y_ex = 0;
+	}
+	else{
+		extendEucld(B, A%B);
+		ll temp = x_ex;
+		x_ex = y_ex;
+		y_ex = temp-(A/B)*y_ex;
+	}
+}
+ 
+ll modInverse(ll A, ll M){
+	extendEucld(A, M);
+	return (x_ex%M + M)%M; //x may be negative 
+	  
+}
+ 
+ //BinomialCoefficient to large numbers.
+ll BinomialCoefficient(ll n, ll p){
+    ll bc = 1;
+    //Using symmetry rule for binomial coefficient (C(n,q) = C(n,p) if q+p = n)
+    if(p > n-p) p = n - p;
+    //Calculating the binomial coefficient from simplify equation (n*(n-1)*...*(n-k+1))/(k*(k-1)*...1)
+    for(ll i = 0; i < p; i++){
+        ll k = n-i, l = i+1;
+        bc = ((bc%MOD)*(k%MOD))%MOD; 
+        bc = ((bc%MOD) * modInverse(l, MOD))%MOD;
+    }
+    return bc;
+}
+   
 //Binomial Coefficient O(p) time
 int BinomialCoefficient(int n, int p){
+
+    if(n < p) return 0;
 
     int bc = 1;
 
@@ -73,4 +112,9 @@ ll CardinalityofSum(ll n, vector<ll>numbers){
     }
 
     return ans;
+}
+
+
+int main(){
+    return 0;
 }
