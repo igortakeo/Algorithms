@@ -12,6 +12,9 @@
  *
  * if a % m = c and b % m = c then (a-b)%m = 0
  * 
+ *  for negative numbers (((a % b) + b) % b)
+ * 
+ * 
  */
  
  /* GCD and LCM Properties
@@ -24,7 +27,9 @@
   * 
   * - gcd(m*a, m*b, m*c) = m*gcd(a,b,c)
   * - gcd(a+m*b, b) = gcd(a,b)
-  * - gcd(a/m, b/m) = gcd(a,b)/m	
+  * - gcd(a/m, b/m) = gcd(a,b)/m
+  * - gcd(a,b) = gcd(a-b,b) if a > b 
+  * - gcd(a,b) = gcd(a, b-a) if b > a	
   * 
   * if gcd(a,b) = 1 then
   * gcd(a*b, m) = gcd(a,m)*gcd(b,m)	
@@ -115,19 +120,19 @@ ll powermod(ll x, ll y, ll p) {
   else : t_2 < t < t_1
 */
 
-ll d, x, y;
+ll d_ex, x_ex, y_ex;
 
 void extendEucld(ll A, ll B){
 	if(B == 0){
-		d = A;
-		x = 1;
-		y = 0;
+		d_ex = A;
+		x_ex = 1;
+		y_ex = 0;
 	}
 	else{
 		extendEucld(B, A%B);
-		int temp = x;
-		x = y;
-		y = temp-(A/B)*y;
+		int temp = x_ex;
+		x_ex = y_ex;
+		y_ex = temp-(A/B)*y_ex;
 	}
 }
 
@@ -164,8 +169,8 @@ void extendEucld(ll A, ll B){
   
 ll modInverse(ll A, ll M){
 		
-	  extendEucld(A, M);
-	  return (x%M + M)%M; //x may be negative 
+	extendEucld(A, M);
+	return (x%M + M)%M; //x may be negative 
 	  
 }
 //Time Complexity : O(log(max(A, M)));
@@ -181,3 +186,4 @@ ll modInverse(ll A, ll M){
    return ModularExponentiation(A,M-2,M);
 }
 //Time Complexity : O(log M);
+  
