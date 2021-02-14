@@ -3,7 +3,7 @@ using namespace std;
 
 //Complexity : O(sqrt(n))
 
-//Euler's Totient Function count the number of co-primes less than or equal to n
+//Euler's Totient Function counts the number of integers between 1 and n inclusive which are coprime to n. 
 //The sum of all values of Totient Function of all divisors of N is equal to N
 //For 2 numbers A and B if GCD(A,B) = 1 then phi(A)*phi(B) = phi(A*b) 
 
