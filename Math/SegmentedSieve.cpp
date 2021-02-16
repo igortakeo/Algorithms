@@ -2,6 +2,8 @@
 #define ll long long
 using namespace std;
 
+//Time Complexity: O((r-l+1)log(r) + sqrt(r))
+//Space Complexity: O(sqrt(r))
 
 vector<ll> sieve(ll n){
     vector<bool> vis(n+1, false);
