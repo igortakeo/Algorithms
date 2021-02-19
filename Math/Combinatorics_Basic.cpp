@@ -35,6 +35,9 @@ ll modInverse(ll A, ll M){
  
  //BinomialCoefficient to large numbers.
 ll BinomialCoefficient(ll n, ll p){
+    
+    if(n < p) return 0;
+    
     ll bc = 1;
     //Using symmetry rule for binomial coefficient (C(n,q) = C(n,p) if q+p = n)
     if(p > n-p) p = n - p;
