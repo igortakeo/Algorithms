@@ -102,7 +102,7 @@ struct hld{
         }
     }  
 
-    void build_hld(int i, int p = -1){
+    void build_hld(int i, int p = -1, int f = 1){
         pos[i] = n;
         n++;
         v[pos[i]] = weight[i];
@@ -114,6 +114,7 @@ struct hld{
                 build_hld(j.first, i);
             }
         }
+        if (p*f == -1) build_hld(head[i] = i, -1, n = 0);
     }
     
     void build(int root){
@@ -141,6 +142,7 @@ struct hld{
     }
 
     void update_path(int a , int b, int x){
+        if(a == b) return;
         if(pos[a] < pos[b]) swap(a, b);
         if(head[a] == head[b]){
             stree.updateValue(0, n-1, pos[b]+1, pos[a], x, 0);

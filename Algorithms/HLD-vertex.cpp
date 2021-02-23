@@ -77,8 +77,6 @@ struct seg{
 
 };
 
-
-
 struct hld{
     vector<int>edges[MAXN];
     int pos[MAXN], sz[MAXN];
@@ -107,7 +105,7 @@ struct hld{
      * o head de cada chain e o pai de cada  
      * vertice.
      */   
-    void build_hld(int i, int p = -1){
+    void build_hld(int i, int p = -1, int f = 1){
         pos[i] = n;
         n++;
         v[pos[i]] = weight[i];
@@ -118,6 +116,7 @@ struct hld{
                 build_hld(j, i);
             }
         }
+        if (p*f == -1) build_hld(head[i] = i, -1, n = 0);
     }
 
     void build(int root){
