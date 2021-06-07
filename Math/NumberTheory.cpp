@@ -150,11 +150,11 @@ void extendEucld(ll A, ll B){
  
  ll modInverse(ll A, ll M){
 	 
-	 A = A%M;
-	 for(int B=1; B < M; B++){
-		 if((A*B)%M == 1) return B; 
-	 }
-	 
+  A = A%M;
+  for(int B=1; B < M; B++){
+    if((A*B)%M == 1) return B; 
+  }
+  
  }
  //Time Complexity : O(M)
  
@@ -166,7 +166,8 @@ void extendEucld(ll A, ll B){
   * the multiplicative inverse.
   * 
   */
-  
+
+ll x;
 ll modInverse(ll A, ll M){
 		
 	extendEucld(A, M);
