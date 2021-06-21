@@ -24,24 +24,21 @@ string convertToNewString(string s) {
 
 string longestPalindromeSubstring(string s) {
     string Q = convertToNewString(s);
-    int c = 0, r = 0;                // current center, right limit
+    int c = 0, r = 0;
 
     for (int i = 1; i < Q.size() - 1; i++) {
 		
-		// find the corresponding letter in the palidrome subString
         int iMirror = c - (i - c);
 		if(r > i) {
             P[i] = min(r - i, P[iMirror]);
         }
 
-        // expanding around center i
         while (Q[i + 1 + P[i]] == Q[i - 1 - P[i]]){
             P[i]++;
         }
 
-        // Update c,r in case if the palindrome centered at i expands past r,
         if (i + P[i] > r) {
-            c = i;              // next center = i
+            c = i;
             r = i + P[i];
         }
     }
@@ -59,7 +56,8 @@ string longestPalindromeSubstring(string s) {
         }
     }
 
-    cout << maxPalindrome << "\n";
+    if(maxPalindrome <= 2) return "none";
+ 
     return s.substr((centerIndex - maxPalindrome) / 2, maxPalindrome);
 }
 
