@@ -39,8 +39,8 @@ struct Point{
 };
 
 //Menor distancia entre ponto e reta
-double MinDist(Point a, Point b, Point c){
-    Point BA = b-a, CA = c-a, CB = c-b, AB = a-b; 
+double MinDist(Point a, Point b, Point point){
+    Point BA = b-a, CA = point-a, CB = point-b, AB = a-b; 
     if(BA*CA >= 0 && CB*AB >= 0){
         ll area = BA^CA;
         ll h = area/BA.norm();
