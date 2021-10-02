@@ -1,23 +1,25 @@
 #include <bits/stdc++.h>
 
+// Maximum Sum Subarray problem
+// Time Complexity O(n)
+// Space Complexity O(n)
+
+
 using namespace std;
 
 int kadane(int a[], int n){
 	
-	int ans=0, max_end=0;
-	int s=0, e=0, aux=0;
-	for(int i=0;i<n;i++){
-		max_end += a[i];
-		if(max_end < 0){
-            max_end = 0;
-            aux = i + 1;
-        }
-        if(ans < max_end){
-            ans = max_end;
-            s = aux;
-            e = i;
-        }
-	}
+    if(n == 0) return 0;
+
+    int ans, maxCurrent;
+
+    ans = maxCurrent = a[0];
+
+    for(int i=1; i<n; i++){
+        maxCurrent = max(maxCurrent+a[i], a[i]);
+        if(maxCurrent > ans) ans = maxCurrent;
+    }
+
 	return ans;
 }
 

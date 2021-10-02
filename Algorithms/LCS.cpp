@@ -1,11 +1,16 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
+ // Time Complexity O(m*n) (n and m is the size of string)
+ // Space Complexity O(m*n)
+
 // defino MAXN como 1010
 #define MAXN 1010
 
 // declaro as variáveis que vou usar
-int s1[MAXN], s2[MAXN], tab[MAXN][MAXN];
+char s1[MAXN], s2[MAXN];
+int tab[MAXN][MAXN];
 
 int lcs(int a, int b){ // declaro a função da DP, de nome lcs
 	

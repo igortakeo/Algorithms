@@ -1,6 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Time Complexity O(n^2)
+// Space Complexity O(n)
+
 vector<int>arr;
 
 int lis(int n){
@@ -9,7 +12,9 @@ int lis(int n){
 
 	for(int i=1; i<n; i++){
 		for(int j=0; j < i; j++){
-			if(arr[i] > arr[j]) arr_lis[i] = max(arr_lis[i], arr_lis[j]+1);
+			if(arr[i] > arr[j]) {
+				arr_lis[i] = max(arr_lis[i], arr_lis[j]+1);
+			}
 		}
 	}
 

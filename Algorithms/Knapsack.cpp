@@ -2,13 +2,15 @@
 using namespace std;
 
 //Problema da Mochila resolvido com DP
+// Time Complexity O(n*m) (n is the number of objects and m is capacity)
+// Space Complexity O(n*m)
 
 // defino os maiores valores de n e s como 1010
 #define MAXN 1010
 #define MAXS 1010
 
 // declaro as variáveis que a função utiliza
-int n, valor[MAXN], peso[MAXN], dp[MAXN][MAXS]
+int n, valor[MAXN], peso[MAXN], dp[MAXN][MAXS];
 
 int knapsack(int obj, int aguenta){
 	
@@ -33,4 +35,10 @@ int knapsack(int obj, int aguenta){
 	// se a função não retornou ainda, então ela não entrou no if
 	// logo não era possível colocar o objeto 
 	return dp[obj][aguenta]=nao_coloca; // então retorno o valor de não colocá-lo
+}
+
+
+int main(){
+
+	return 0;
 }
