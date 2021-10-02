@@ -6,7 +6,7 @@ using namespace std;
 
 struct edges{ //struct aresta x = vertice_1, y = vertice_2 e weight = peso
 	int x, y, weight;
-}
+};
 
 bool compare(edges a, edges b){ //funcao compare para o sort, ordenar pelo peso da aresta
 	return a.weight < b.weight;
