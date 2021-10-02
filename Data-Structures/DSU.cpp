@@ -5,7 +5,7 @@ using namespace std;
 int n, k, pai[MAXN], peso[MAXN], qtd[MAXN];
 
 int find(int x){
-	if(pai[x] == x) return x;		
+	if(pai[x] == x) return x;	
 	return  pai[x]=find(pai[x]); //dp: guardando o pai de x.
 } 
 
