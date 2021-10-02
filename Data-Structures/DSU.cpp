@@ -21,7 +21,7 @@ void join(int x, int y){
 
 	else if(peso[x]>peso[y]){pai[y]=x; qtd[x]+=qtd[y];}
 	
-	//se os dois tiverem  o mesmo peso, escolha um para ser pai de outro e aumente seu peso
+	//se os dois tiverem  o mesmo peso, escolha um para ser pai de outro e aumente seu peso.
 	else if(peso[x]==peso[y]){
 		pai[x]=y;
 		peso[y]++;
