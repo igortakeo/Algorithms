@@ -5,6 +5,8 @@ using namespace std;
 
 // Time Complexity O(V+E)
 
+// Graph need be DAG (Directed + Acyclic Graph)
+
 vector<int>edges[MAX];//grafo
 stack<int> topo; //na stack topo vai conter a ordenacao topologico, sendo o topo da pilha o primeiro elemento
 bool vis[MAX];//vetor de visitados

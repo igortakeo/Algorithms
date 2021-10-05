@@ -3,6 +3,11 @@
 #define MOD 1000000009
 using namespace std;
 
+
+// Appropriate values of p
+// only lowercase letters p= 31
+// uppercase and lowercase letters p = 53
+
 ll string_hash(string s){
     ll p = 31;
     ll hash = 0;
