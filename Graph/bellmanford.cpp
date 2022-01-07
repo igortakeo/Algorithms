@@ -7,7 +7,7 @@ using namespace std;
 
 struct edges{//struct aresta
 	int x, y, weight; //x = vertice_1, y = vertice_2 e weight = peso
-}
+};
 
 vector<edges>edges_bellford; //vetor de arestas
 int dist[MAX]; //vetor de distancias
