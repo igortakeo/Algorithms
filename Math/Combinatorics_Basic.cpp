@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 #define ll long long
 #define MAX 15
+#define MOD 100000000
 using namespace std;
 /*
 Simple Permutation: n!
